@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>V Karthikeyan — Data Systems & AI Engineer</title>
-  <meta name="description" content="B.Tech Biomedical Engineering student specialised in Data Science with hands-on experience in data analytics, AI, dashboard development, predictive modelling, and healthcare technology." />
-  <meta name="keywords" content="data analytics, AI, machine learning, biomedical engineering, IoT, embedded systems, Karthikeyan, portfolio, Coimbatore" />
-  <meta property="og:title" content="V Karthikeyan — Data Systems & AI Engineer" />
-  <meta property="og:description" content="Designing intelligent systems at the intersection of data, AI, and biomedical engineering." />
+  <title>V Karthikeyan — Executive Portfolio</title>
+  <meta name="description" content="General Manager of Tech, Data Analyst, and AI Systems Leader. National Winner of Boeing Build 4.0 (₹10 Lakhs). Biomedical Engineer specialized in Data Science, bridging the gap between raw data, advanced AI, and strategic execution." />
+  <meta name="keywords" content="General Manager, Technology, Data Analyst, AI Systems, Machine Learning, Biomedical Engineering, Business Intelligence, Tableau, V Karthikeyan, Boeing Build Winner, Coimbatore" />
+  <meta property="og:title" content="V Karthikeyan — Executive Portfolio" />
+  <meta property="og:description" content="Designing and leading data-driven systems at the intersection of management, advanced analytics, AI, and healthcare." />
   <meta property="og:type" content="website" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress"></div>
+
+  <!-- Custom Cursor Glow -->
+  <div id="customCursorGlow"></div>
 
   <!-- ═══════════════════════════════════════════════
        NAVIGATION
@@ -45,19 +52,32 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════════
-       HERO
+       HERO SECTION
   ═══════════════════════════════════════════════ -->
   <section class="hero" id="hero">
     <div class="hero__bg-grid"></div>
+    <div class="hero__light-orb"></div>
 
     <div class="hero__content">
-      <h1 class="hero__headline reveal-up">
-        I build systems<br />
-        that turn <em class="hero__headline-em">data</em><br />
-        into decisions.
+      <!-- Tag / Status Badge -->
+      <div class="hero__status-badge reveal-item">
+        <span class="hero__status-dot"></span>
+        <span class="hero__status-text">GM of Technology @ Rapha MedTech · Boeing Build 4.0 Winner</span>
+      </div>
+
+      <!-- Hero Cinematic Headlines -->
+      <h1 class="hero__headline reveal-item">
+        <span class="hero__line-wrap"><span class="hero__line">I build systems</span></span><br />
+        <span class="hero__line-wrap"><span class="hero__line">that turn <em class="hero__headline-em">data</em></span></span><br />
+        <span class="hero__line-wrap"><span class="hero__line">into decisions.</span></span>
       </h1>
 
-      <div class="hero__roles reveal-up delay-2">
+      <p class="hero__subtext reveal-item">
+        Designing and leading data-driven systems at the intersection of business strategy, predictive analytics, AI, and healthcare technology.
+      </p>
+
+      <!-- Roles Slider -->
+      <div class="hero__roles reveal-item">
         <span class="hero__roles-fixed">I AM A </span>
         <div class="hero__roles-wrap">
           <div class="hero__roles-track">
@@ -70,17 +90,26 @@
         </div>
       </div>
 
-      <div class="hero__actions reveal-up delay-3">
-        <a href="#projects" class="btn btn--primary" id="heroViewWork">View My Work</a>
+      <div class="hero__actions reveal-item">
+        <a href="#projects" class="btn btn--primary" id="heroViewWork">View Selected Work</a>
         <a href="#about"    class="btn btn--ghost"   id="heroAbout">About Me</a>
       </div>
     </div>
 
-    <div class="hero__scroll-indicator reveal-up delay-4" id="scrollIndicator">
-      <span class="hero__scroll-line"></span>
-      <span class="hero__scroll-label">Scroll</span>
+    <!-- Executive Hero Portrait Card -->
+    <div class="hero__image-container reveal-item" id="heroArtisticImage">
+      <div class="hero__image-frame">
+        <img src="images/hero-portrait.jpg" alt="V Karthikeyan General Manager" class="hero__image-art" />
+      </div>
     </div>
 
+    <!-- Scroll Down indicator -->
+    <div class="hero__scroll-indicator reveal-item" id="scrollIndicator">
+      <span class="hero__scroll-label">Scroll Down</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+
+    <!-- Horizontal Seamless Loop of Skills -->
     <div class="hero__domains">
       <div class="hero__domain-track">
         <span>Data Analytics</span><span class="sep">·</span>
@@ -92,7 +121,7 @@
         <span>Vision Transformers</span><span class="sep">·</span>
         <span>Deep Learning</span><span class="sep">·</span>
         <span>Research &amp; Publication</span><span class="sep">·</span>
-        <!-- duplicate for seamless loop -->
+        <!-- Duplicate for loop -->
         <span>Data Analytics</span><span class="sep">·</span>
         <span>Machine Learning</span><span class="sep">·</span>
         <span>Computer Vision</span><span class="sep">·</span>
@@ -107,14 +136,34 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       ABOUT
+       ABOUT & BENTO GRID SECTION
   ═══════════════════════════════════════════════ -->
   <section class="about section" id="about">
     <div class="container">
-      <div class="about__grid">
+      <div class="about__header">
+        <p class="section-label">Executive Brief</p>
+        <h2 class="section-title">Systems thinker. Problem engineer.</h2>
+      </div>
 
-        <!-- Profile image placeholder -->
-        <div class="about__image-col reveal-left">
+      <!-- Bento Grid Layout -->
+      <div class="bento-grid">
+        <!-- Bio Card (Large) -->
+        <div class="bento-card bento-card--bio hover-glow-card">
+          <div class="bento-card__inner">
+            <p class="bento-card__subtitle">Philosophy</p>
+            <h3 class="bento-card__title">Connecting Data, Hardware, and Strategic Leadership</h3>
+            <p class="about__para">
+              I'm <strong>V Karthikeyan</strong> — a Biomedical Engineer specialised in Data Science from Karunya Institute of Technology and Sciences. I design and lead data-driven systems that merge engineering discipline with executive execution.
+            </p>
+            <p class="about__para">
+              I approach every challenge as a system. I define the target decisions first, then architect the predictive algorithms, pipelines, and hardware integration required to support them.
+            </p>
+            <a href="#contact" class="btn btn--primary" id="aboutCta">Connect Directly</a>
+          </div>
+        </div>
+
+        <!-- Visual Profile Card -->
+        <div class="bento-card bento-card--profile hover-glow-card">
           <div class="about__image-wrap">
             <img src="images/profile.jpg" alt="V Karthikeyan Profile Photo" class="about__img" />
             <div class="about__image-tag">
@@ -123,172 +172,179 @@
           </div>
         </div>
 
-        <!-- Text col -->
-        <div class="about__text-col reveal-right">
-          <p class="section-label">About Me</p>
-          <h2 class="section-title">Systems thinker.<br />Problem engineer.</h2>
-
-          <p class="about__para">
-            I'm <strong>V Karthikeyan</strong> — a B.Tech Biomedical Engineering student specialised in Data Science at Karunya Institute of Technology and Sciences. I design and lead data-driven systems at the intersection of management thinking, analytics, AI, and biomedical engineering.
-          </p>
-          <p class="about__para">
-            From building a healthcare AI platform that won <strong>₹10 Lakhs at Boeing Build 4.0</strong>, to developing a dermatology screening platform with 97% accuracy — I approach every problem as a system, not an isolated task. I define the decision first, then engineer the data that supports it.
-          </p>
-
-          <!-- Achievement highlight -->
-          <div class="about__award">
-            <span class="about__award-icon">🏆</span>
-            <div>
-              <span class="about__award-title">Boeing Build 4.0 — National Winner</span>
-              <span class="about__award-sub">₹10 Lakhs · AI-driven prosthetic & rehab platform · Tech &amp; Analytics Lead</span>
-            </div>
+        <!-- Stat Card 1: Boeing Winner (Medium) -->
+        <div class="bento-card bento-card--award hover-glow-card">
+          <div class="bento-card__inner">
+            <span class="bento-card__icon">🏆</span>
+            <p class="bento-card__subtitle">National Recognition</p>
+            <h4 class="bento-card__stat-title">Boeing Build 4.0 Winner</h4>
+            <p class="bento-card__desc">
+              Won <strong>₹10 Lakhs</strong> as the Tech &amp; Analytics Lead. Led the development of an AI-driven prosthetic and rehabilitation ecosystem.
+            </p>
           </div>
-
-          <div class="about__stats">
-            <div class="about__stat">
-              <span class="about__stat-number" data-target="6">0</span>
-              <span class="about__stat-label">Projects Built</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-number" data-target="4">0</span>
-              <span class="about__stat-label">Core Domains</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-number" data-target="8">0</span>
-              <span class="about__stat-label">Certifications</span>
-            </div>
-            <div class="about__stat">
-              <span class="about__stat-number" data-target="97">0</span>
-              <span class="about__stat-label">MelascopeDx Accuracy %</span>
-            </div>
-          </div>
-
-          <a href="#contact" class="btn btn--primary" id="aboutCta">Work With Me</a>
         </div>
 
+        <!-- Stat Card 2: Accuracy (Small) -->
+        <div class="bento-card bento-card--stat hover-glow-card">
+          <div class="bento-card__inner">
+            <span class="bento-card__num" data-target="97">0</span>
+            <p class="bento-card__stat-lbl">MelascopeDx Accuracy %</p>
+            <p class="bento-card__desc">AI Dermatology Screening classification precision.</p>
+          </div>
+        </div>
+
+        <!-- Stat Card 3: Projects (Small) -->
+        <div class="bento-card bento-card--stat hover-glow-card">
+          <div class="bento-card__inner">
+            <span class="bento-card__num" data-target="6">0</span>
+            <p class="bento-card__stat-lbl">Projects Built</p>
+            <p class="bento-card__desc">End-to-end analytical & ML systems completed.</p>
+          </div>
+        </div>
+
+        <!-- Stat Card 4: Domains (Small) -->
+        <div class="bento-card bento-card--stat hover-glow-card">
+          <div class="bento-card__inner">
+            <span class="bento-card__num" data-target="4">0</span>
+            <p class="bento-card__stat-lbl">Core Domains</p>
+            <p class="bento-card__desc">Data Science, MedTech, IoT, and Strategic Leadership.</p>
+          </div>
+        </div>
+
+        <!-- Stat Card 5: Certifications (Small) -->
+        <div class="bento-card bento-card--stat hover-glow-card">
+          <div class="bento-card__inner">
+            <span class="bento-card__num" data-target="8">0</span>
+            <p class="bento-card__stat-lbl">Certifications</p>
+            <p class="bento-card__desc">Professional validations in advanced analytics and technology.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       EXPERTISE
+       EXPERTISE SECTION
   ═══════════════════════════════════════════════ -->
   <section class="expertise section" id="expertise">
     <div class="container">
-      <div class="expertise__header reveal-up">
-        <p class="section-label">What I Do</p>
-        <h2 class="section-title">Intentional. Analytical.<br />Built to Scale.</h2>
+      <div class="expertise__header">
+        <p class="section-label">Methodology</p>
+        <h2 class="section-title">Intentional. Analytical. Built to Scale.</h2>
       </div>
 
       <div class="expertise__list">
-
-        <div class="expertise__item reveal-up">
+        <!-- Item 1 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">01</span>
             <div class="expertise__body">
               <h3 class="expertise__title">Data Analytics & Business Intelligence</h3>
-              <p class="expertise__desc">Transforming raw, messy data into actionable insights — from EDA and feature engineering to Tableau and Power BI dashboards that surface KPIs, reveal hidden patterns, and drive executive-level decision-making.</p>
+              <p class="expertise__desc">Transforming complex datasets into executive dashboards (Tableau, Power BI, Excel). Surfacing mission-critical KPIs, forecasting performance, and conducting deep exploratory data analysis (EDA) to drive strategic decisions.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
 
-        <div class="expertise__item reveal-up delay-1">
+        <!-- Item 2 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">02</span>
             <div class="expertise__body">
-              <h3 class="expertise__title">AI & Machine Learning</h3>
-              <p class="expertise__desc">Building end-to-end ML pipelines using TensorFlow, Keras, CNNs, and Vision Transformers. Focused on practical systems — class-imbalance handling, risk-score ranking, and integrating LLM/OpenAI APIs into product ecosystems.</p>
+              <h3 class="expertise__title">Applied AI & Machine Learning</h3>
+              <p class="expertise__desc">Engineering high-performing ML pipelines using TensorFlow, Keras, CNNs, and Vision Transformers. Addressing critical real-world complexities such as data class imbalance, model quantization, and LLM integrations.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
 
-        <div class="expertise__item reveal-up delay-2">
+        <!-- Item 3 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">03</span>
             <div class="expertise__body">
               <h3 class="expertise__title">Computer Vision & Medical Imaging</h3>
-              <p class="expertise__desc">Designing image-classification systems for healthcare — retinal disease staging, posture analytics using real-time CV, and skin lesion analysis. Every model is built with clinical usability and patient impact in mind.</p>
+              <p class="expertise__desc">Designing and deploying advanced medical image classifiers—such as retinal disease risk-stratification models, skin lesion staging networks, and real-time posture analytics platforms built for clinical deployment.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
 
-        <div class="expertise__item reveal-up delay-1">
+        <!-- Item 4 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">04</span>
             <div class="expertise__body">
-              <h3 class="expertise__title">Biomedical Engineering</h3>
-              <p class="expertise__desc">Extending intelligent systems into the physical world — bionic arms, wearable RF sensors, IoT patient-monitoring workflows, and technology that bridges clinical signals with data-backed decisions.</p>
+              <h3 class="expertise__title">Biomedical Engineering & Applied IoT</h3>
+              <p class="expertise__desc">Bridging clinical signals with analytics. Prototyping advanced assistive bionics, wearable RF health sensors, and secure IoT remote patient-monitoring systems that transform physiological data into insights.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
 
-        <div class="expertise__item reveal-up delay-2">
+        <!-- Item 5 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">05</span>
             <div class="expertise__body">
-              <h3 class="expertise__title">Embedded Systems & IoT</h3>
-              <p class="expertise__desc">Prototyping IoT data-capture and control applications using ESP32, sensor streams, and cloud integrations. Building real-time monitoring systems that link physical hardware to intelligent analytics.</p>
+              <h3 class="expertise__title">Embedded Systems & Hardware Integration</h3>
+              <p class="expertise__desc">Prototyping low-latency hardware setups using ESP32, multi-sensor arrays, and cloud pipelines. Establishing robust data ingestion flows from hardware nodes straight into analytics platforms.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
 
-        <div class="expertise__item reveal-up delay-3">
+        <!-- Item 6 -->
+        <div class="expertise__item hover-glow-card">
           <div class="expertise__item-inner">
             <span class="expertise__num">06</span>
             <div class="expertise__body">
               <h3 class="expertise__title">Cross-Functional Team Leadership</h3>
-              <p class="expertise__desc">Led an 8-member interdisciplinary team (electronics, software, mechanical, clinical) to deliver a funded healthcare product. Skilled in planning, prioritisation, cross-team communication, and business report writing.</p>
+              <p class="expertise__desc">Experienced in leading multidisciplinary engineering teams (electronics, mechanical, software, clinical). Managing product life cycles, business reports, resource allocation, and team deliverable alignment.</p>
             </div>
             <div class="expertise__arrow">→</div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       PROJECTS
+       SELECTED PROJECTS SECTION
   ═══════════════════════════════════════════════ -->
   <section class="projects section" id="projects">
     <div class="container">
-      <div class="projects__header reveal-up">
-        <p class="section-label">Selected Work</p>
-        <h2 class="section-title">Projects</h2>
+      <div class="projects__header">
+        <p class="section-label">Demonstrated Performance</p>
+        <h2 class="section-title">Selected Projects</h2>
       </div>
     </div>
 
     <div class="projects__list">
-
       <!-- Project 1 -->
-      <article class="project-row reveal-up" id="project-melascope">
+      <article class="project-row" id="project-melascope">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="MelascopeDx screenshot">
-                <img src="images/melascope.jpg" alt="MelascopeDx Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="MelascopeDx preview">
+                <img src="images/melascope.jpg" alt="MelascopeDx AI Dermatology Screening" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">01</span>
+                <span class="project-row__num">PROJECT 01</span>
                 <div class="project-row__tags">
-                  <span class="tag">AI</span>
+                  <span class="tag">AI System</span>
                   <span class="tag">Healthcare</span>
                   <span class="tag">Full-Stack</span>
                 </div>
               </div>
-              <h3 class="project-row__title">MelascopeDx – AI Dermatology Screening Platform</h3>
+              <h3 class="project-row__title">MelascopeDx — AI Dermatology Screening Platform</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Built a full-stack AI healthcare platform for dermatological condition screening, achieving <strong>97% classification accuracy</strong> in supported evaluation scenarios.</li>
-                  <li>Designed a clinician-style interface with patient history, screening records, and automated reporting to make image-based assessment more structured and usable.</li>
-                  <li>Created an AI-assisted screening workflow to improve early decision support and streamline diagnostic review.</li>
+                <p class="project-row__lead-text">Achieved <strong>97% classification accuracy</strong> in supported clinical scenarios.</p>
+                <ul class="project-row__bullets">
+                  <li>Designed a full clinician-facing platform integrated with automated diagnostics, digital patient history, and report generation engines.</li>
+                  <li>Implemented responsive interfaces that turn model outputs into visual risk profiles, aiding clinicians with rapid decision support.</li>
                 </ul>
               </div>
             </div>
@@ -297,29 +353,29 @@
       </article>
 
       <!-- Project 2 -->
-      <article class="project-row project-row--alt reveal-up" id="project-retinopathy">
+      <article class="project-row project-row--alt" id="project-retinopathy">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Diabetic Retinopathy Screening screenshot">
-                <img src="images/dr-screening.jpg" alt="Diabetic Retinopathy Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="Diabetic Retinopathy preview">
+                <img src="images/dr-screening.jpg" alt="Diabetic Retinopathy Staging AI" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">02</span>
+                <span class="project-row__num">PROJECT 02</span>
                 <div class="project-row__tags">
                   <span class="tag">Deep Learning</span>
-                  <span class="tag">Vision Transformer</span>
+                  <span class="tag">Vision Transformers</span>
                   <span class="tag">Medical Imaging</span>
                 </div>
               </div>
-              <h3 class="project-row__title">Diabetic Retinopathy Screening – AI Risk Stratification Platform</h3>
+              <h3 class="project-row__title">Diabetic Retinopathy — AI Risk Stratification Platform</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Built an end-to-end screening pipeline to classify retinal fundus images into <strong>5 diabetic retinopathy severity stages</strong> using CNN and Vision Transformer models.</li>
-                  <li>Applied augmentation, stratified validation, and class-balancing techniques to improve model robustness on imbalanced clinical image datasets.</li>
-                  <li>Designed risk scoring and dashboard-style outputs to support early case prioritization and improve diagnostic workflow efficiency.</li>
+                <p class="project-row__lead-text">Classifies retinal fundus scans into <strong>5 severity stages</strong> using deep CNNs and ViT blocks.</p>
+                <ul class="project-row__bullets">
+                  <li>Engineered image preprocessing, stratified cross-validation, and class-imbalance mitigations to ensure model integrity on clinical datasets.</li>
+                  <li>Deployed custom risk-scoring metrics on interactive web dashboards for instant operational triage and case prioritization.</li>
                 </ul>
               </div>
             </div>
@@ -328,29 +384,29 @@
       </article>
 
       <!-- Project 3 -->
-      <article class="project-row reveal-up" id="project-telemetry">
+      <article class="project-row" id="project-telemetry">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Daikibo Telemetry Dashboard screenshot">
-                <img src="images/telemetry.jpg" alt="Daikibo Telemetry Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="Daikibo Telemetry preview">
+                <img src="images/telemetry.jpg" alt="Daikibo IoT Telemetry Analytics" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">03</span>
+                <span class="project-row__num">PROJECT 03</span>
                 <div class="project-row__tags">
                   <span class="tag">Tableau</span>
-                  <span class="tag">IoT</span>
-                  <span class="tag">Data Visualization</span>
+                  <span class="tag">IoT Analytics</span>
+                  <span class="tag">Data Visualisation</span>
                 </div>
               </div>
-              <h3 class="project-row__title">Daikibo Telemetry Dashboard – IoT Device Health Analytics</h3>
+              <h3 class="project-row__title">Daikibo Telemetry Dashboard — IoT Analytics</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Developed an interactive Tableau dashboard analyzing telemetry data across <strong>4 factory locations</strong>, identifying unhealthy device concentration by site and machine type.</li>
-                  <li>Converted semi-structured JSON telemetry data into operational KPIs, comparative charts, and device-health insights for faster maintenance visibility.</li>
-                  <li>Enabled data-driven monitoring and issue prioritization through clear visualization of factory-level and equipment-level performance trends.</li>
+                <p class="project-row__lead-text">Integrated real-time hardware telemetry streams into visual industrial KPIs across <strong>4 factory complexes</strong>.</p>
+                <ul class="project-row__bullets">
+                  <li>Aggregated and parsed semi-structured JSON sensor feeds into high-level business intelligence.</li>
+                  <li>Uncovered geographical anomalies in machine operational thresholds, drastically reducing machinery downtime through predictive maintenance prompts.</li>
                 </ul>
               </div>
             </div>
@@ -359,29 +415,29 @@
       </article>
 
       <!-- Project 4 -->
-      <article class="project-row project-row--alt reveal-up" id="project-sql">
+      <article class="project-row project-row--alt" id="project-sql">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="MySQL Web Compiler screenshot">
-                <img src="images/mysql-compiler.jpg" alt="MySQL Compiler Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="MySQL Compiler preview">
+                <img src="images/mysql-compiler.jpg" alt="MySQL Web Compiler Platform" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">04</span>
+                <span class="project-row__num">PROJECT 04</span>
                 <div class="project-row__tags">
-                  <span class="tag">SQL</span>
-                  <span class="tag">Web Platform</span>
-                  <span class="tag">Data Engineering</span>
+                  <span class="tag">SQL Engine</span>
+                  <span class="tag">Web Compiler</span>
+                  <span class="tag">Data Systems</span>
                 </div>
               </div>
-              <h3 class="project-row__title">MySQL Web Compiler Platform – Dataset Management Environment</h3>
+              <h3 class="project-row__title">MySQL Web Compiler — Ingestion &amp; Query Environment</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Built a web-based SQL compiler platform supporting <strong>5+ file formats</strong> including CSV, XLSX, XLS, XML, and SQL for faster local query execution and dataset onboarding.</li>
-                  <li>Designed a smart execution engine to process multi-block SQL scripts, improving query handling beyond basic single-pass execution methods.</li>
-                  <li>Added dataset preview, structured export, and interactive query workflows to simplify analysis, testing, and database creation for developers and analysts.</li>
+                <p class="project-row__lead-text">Allows fast query onboarding and compilation supporting <strong>5+ file formats</strong> (CSV, XLSX, XLS, XML, SQL).</p>
+                <ul class="project-row__bullets">
+                  <li>Engineered a custom parsing script to execute complex multi-statement SQL files client-side.</li>
+                  <li>Built features for visual data exporting, automatic schema recognition, and quick interactive previews, boosting developer productivity.</li>
                 </ul>
               </div>
             </div>
@@ -390,29 +446,29 @@
       </article>
 
       <!-- Project 5 -->
-      <article class="project-row reveal-up" id="project-voice">
+      <article class="project-row" id="project-voice">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Voice-Assisted Communication Box screenshot">
-                <img src="images/voice-box.jpg" alt="Voice Box Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="Voice Box preview">
+                <img src="images/voice-box.jpg" alt="Voice-Assisted Assistive Box" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">05</span>
+                <span class="project-row__num">PROJECT 05</span>
                 <div class="project-row__tags">
-                  <span class="tag">Assistive Tech</span>
+                  <span class="tag">IoT Device</span>
                   <span class="tag">Voice UI</span>
-                  <span class="tag">IoT</span>
+                  <span class="tag">Assistive Tech</span>
                 </div>
               </div>
-              <h3 class="project-row__title">Voice-Assisted Communication Box – Assistive Device</h3>
+              <h3 class="project-row__title">Voice-Assisted Box — Inclusive Assistive UI</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Developed a voice-assisted communication device to help physically disabled users express needs more easily and interact with their surroundings with greater independence.</li>
-                  <li>Designed the system for accessible, hands-free communication support, reducing reliance on manual communication methods.</li>
-                  <li>Built a user-centered assistive solution focused on inclusive design, faster communication support, and practical day-to-day usability.</li>
+                <p class="project-row__lead-text">Dedicated voice synthesizer interface helping speech-impaired individuals express primary needs.</p>
+                <ul class="project-row__bullets">
+                  <li>Structured clean signal flows from hardware buttons directly to voice processing units.</li>
+                  <li>Optimized system battery usage and response times to ensure practical day-to-day usability.</li>
                 </ul>
               </div>
             </div>
@@ -421,148 +477,145 @@
       </article>
 
       <!-- Project 6 -->
-      <article class="project-row project-row--alt reveal-up" id="project-layoffs">
+      <article class="project-row project-row--alt" id="project-layoffs">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Global Tech Layoffs Dashboard screenshot">
-                <img src="images/layoff-dashboard.jpg" alt="Layoffs Dashboard Preview" class="portfolio-img" />
+              <div class="img-placeholder" aria-label="Layoffs Dashboard preview">
+                <img src="images/layoff-dashboard.jpg" alt="Global Tech Layoffs Excel Dashboard" class="portfolio-img" />
               </div>
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">06</span>
+                <span class="project-row__num">PROJECT 06</span>
                 <div class="project-row__tags">
                   <span class="tag">Data Analytics</span>
-                  <span class="tag">Excel</span>
-                  <span class="tag">Dashboard</span>
+                  <span class="tag">Advanced Excel</span>
+                  <span class="tag">Visual Dashboard</span>
                 </div>
               </div>
-              <h3 class="project-row__title">Global Tech Layoffs Dashboard (Excel)</h3>
+              <h3 class="project-row__title">Global Tech Layoffs — Corporate Analytics Dashboard</h3>
               <div class="project-row__desc">
-                <ul class="exp-item__bullets">
-                  <li>Built an Excel dashboard aggregating <strong>1,893 companies and 3,86,379 people</strong> laid off for a clear global tech-layoffs overview.</li>
-                  <li>Designed KPI, time-series, and industry/funding-stage charts showing consumer and retail as the most impacted sectors (40K+ layoffs each).</li>
-                  <li>Enabled executive-style decisions by surfacing layoff concentration across years and stages, with Post-IPO and late-stage firms dominating totals.</li>
+                <p class="project-row__lead-text">Synthesized data across <strong>1,893 corporate entities</strong> and <strong>3,86,379 employees</strong> in Excel.</p>
+                <ul class="project-row__bullets">
+                  <li>Developed clean metrics workflows utilizing Pivot tables, nested arrays, and data sanitation logic.</li>
+                  <li>Identified market and funding-stage trends, showcasing retail and consumer tech as sectors with severe volatility (40K+ layoffs each).</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </article>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       COMPANY-LED PROJECTS
+       COMPANY-LED INITIATIVES (RAPHA MEDTECH)
   ═══════════════════════════════════════════════ -->
   <section class="projects section" id="company-projects">
     <div class="container">
-      <div class="projects__header reveal-up">
-        <p class="section-label">Rapha MedTech</p>
-        <h2 class="section-title">Company-Led Projects</h2>
+      <div class="projects__header">
+        <p class="section-label">Strategic Operations</p>
+        <h2 class="section-title">Company-Led Initiatives</h2>
       </div>
-    </div>
 
-    <div class="container">
       <div class="company-projects-grid">
-
-        <!-- Company Project 1 -->
-        <article class="project-row__content-col reveal-up" id="project-rehab-saas">
-          <div class="project-row__meta">
-            <span class="project-row__num">01</span>
-            <div class="project-row__tags">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">SaaS</span>
-              <span class="tag">Healthcare</span>
+        <!-- Platform 1 -->
+        <article class="company-card hover-glow-card">
+          <div class="company-card__inner">
+            <div class="project-row__meta">
+              <span class="project-row__num">INITIATIVE 01</span>
+              <div class="project-row__tags">
+                <span class="tag">SaaS Platform</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Clinical Workflows</span>
+              </div>
             </div>
-          </div>
-          <h3 class="project-row__title">Rehab SaaS Platform – Remote Physiotherapy Monitoring</h3>
-          <div class="project-row__desc">
-            <ul class="exp-item__bullets">
-              <li>Led the development of a remote rehabilitation SaaS platform at <strong>Rapha MedTech</strong> to support virtual physiotherapy, posture tracking, and patient progress monitoring.</li>
-              <li>Translated clinical observations into structured digital workflows, helping improve rehabilitation follow-up, engagement, and therapy visibility.</li>
-              <li>Coordinated product execution across technical and healthcare perspectives as part of company-led MedTech innovation.</li>
+            <h3 class="company-card__title">Rehab SaaS — Remote Physiotherapy Monitoring</h3>
+            <p class="company-card__desc">
+              Directed technical execution of a virtual rehabilitation SaaS system at Rapha MedTech. Designed algorithms to capture joint orientation via web cameras, allowing clinicians to review real-time recovery analytics and patient telemetry.
+            </p>
+            <ul class="company-card__bullets">
+              <li>Mapped clinical biomechanical targets to digital analytics.</li>
+              <li>Enabled full-scale HIPAA-compliant patient monitoring dashboards.</li>
             </ul>
           </div>
         </article>
 
-        <!-- Company Project 2 -->
-        <article class="project-row__content-col reveal-up" id="project-bionic-arm">
-          <div class="project-row__meta">
-            <span class="project-row__num">02</span>
-            <div class="project-row__tags">
-              <span class="tag">Hardware</span>
-              <span class="tag">AI</span>
-              <span class="tag">Prosthetics</span>
+        <!-- Platform 2 -->
+        <article class="company-card hover-glow-card">
+          <div class="company-card__inner">
+            <div class="project-row__meta">
+              <span class="project-row__num">INITIATIVE 02</span>
+              <div class="project-row__tags">
+                <span class="tag">Bionics</span>
+                <span class="tag">Signal Processing</span>
+                <span class="tag">Strategic Planning</span>
+              </div>
             </div>
-          </div>
-          <h3 class="project-row__title">AI-Powered Bionic Arm – Smart Prosthetic Control</h3>
-          <div class="project-row__desc">
-            <ul class="exp-item__bullets">
-              <li>Contributed to the development of an <strong>AI-powered bionic arm</strong> at Rapha MedTech as part of the founding and product leadership team.</li>
-              <li>Worked across electronics, mechanical, software, and clinical functions to align prototype development with functional requirements and usability goals.</li>
-              <li>Supported a company-led innovation effort that contributed to <strong>Boeing Build 4.0 national winner recognition and ₹10 lakh funding</strong>.</li>
+            <h3 class="company-card__title">AI Bionic Arm — High-End Smart Prosthetics</h3>
+            <p class="company-card__desc">
+              Coordinated cross-functional teams (electronics, mechanical, software, clinical specialists) as a founding team member to build a low-cost, smart myoelectric prosthetic limb. 
+            </p>
+            <ul class="company-card__bullets">
+              <li>Pioneered biological signal-processing classifiers to decode muscle movement intent.</li>
+              <li>Contributed to securing national recognition and <strong>₹10 Lakhs in funding at Boeing Build 4.0</strong>.</li>
             </ul>
           </div>
         </article>
-
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       EXPERIENCE
+       EXPERIENCE SECTION
   ═══════════════════════════════════════════════ -->
   <section class="experience section" id="experience">
     <div class="container">
-      <div class="experience__header reveal-up">
-        <p class="section-label">Work History</p>
-        <h2 class="section-title">Experience</h2>
+      <div class="experience__header">
+        <p class="section-label">Career Progression</p>
+        <h2 class="section-title">Leadership &amp; Execution</h2>
       </div>
 
       <div class="experience__timeline">
-
-        <!-- Entry 1 — Rapha MedTech -->
-        <div class="exp-item reveal-up">
+        <!-- Job 1 -->
+        <div class="exp-item">
           <div class="exp-item__left">
             <div class="exp-item__dot"></div>
             <div class="exp-item__line"></div>
           </div>
-          <div class="exp-item__content">
+          <div class="exp-item__content hover-glow-card">
             <div class="exp-item__header">
               <div class="exp-item__title-block">
                 <h3 class="exp-item__role">General Manager, Technology</h3>
-                <span class="exp-item__company">Rapha MedTech — Founding Team Role</span>
+                <span class="exp-item__company">Rapha MedTech — Founding Core Team</span>
               </div>
               <div class="exp-item__meta">
-                <span class="exp-item__date">Oct 2024 – Present</span>
-                <span class="exp-item__location">Coimbatore, TN</span>
+                <span class="exp-item__date">May 2025 – Present</span>
+                <span class="exp-item__location">Hyderabad, Telangana</span>
               </div>
             </div>
             <ul class="exp-item__bullets">
-              <li>Part of the founding team at an early-stage health-tech startup building an AI-powered bionic arm and virtual rehab SaaS platform.</li>
-              <li>Led an 8-member cross-functional team (electronics, mechanical, software, clinical) — owning product coordination, delivery timelines, and technical decisions.</li>
-              <li>Designed patient-centric analytics workflows and dashboards to track rehab progress, risk scores, and therapy adherence from real-world clinical data.</li>
-              <li>Contributed to a prosthetic-arm solution that <strong>won ₹10 Lakhs at Boeing Build 4.0</strong> (National Winner).</li>
+              <li>Leading a cross-functional 8-member product development team (electronics, hardware design, ML engineers, clinical advisors) translating medical concepts into products.</li>
+              <li>Orchestrating end-to-end telemetry pipelines linking embedded patient-worn bionic devices to cloud dashboards.</li>
+              <li>Instrumental in engineering the bionics system that <strong>won the national Boeing Build 4.0 competition, securing ₹10 Lakhs</strong>.</li>
             </ul>
             <div class="exp-item__tags">
-              <span class="tag">Team Leadership</span>
-              <span class="tag">Healthcare AI</span>
-              <span class="tag">Analytics Dashboards</span>
-              <span class="tag">Boeing Build 4.0 Winner</span>
+              <span class="tag">Agile Leadership</span>
+              <span class="tag">AI Architecture</span>
+              <span class="tag">Bionics Telemetry</span>
+              <span class="tag">Stakeholder Management</span>
             </div>
           </div>
         </div>
 
-        <!-- Entry 2 — Deloitte Forage -->
-        <div class="exp-item reveal-up delay-1">
+        <!-- Job 2 -->
+        <div class="exp-item">
           <div class="exp-item__left">
             <div class="exp-item__dot"></div>
             <div class="exp-item__line"></div>
           </div>
-          <div class="exp-item__content">
+          <div class="exp-item__content hover-glow-card">
             <div class="exp-item__header">
               <div class="exp-item__title-block">
                 <h3 class="exp-item__role">Data Analytics Job Simulation</h3>
@@ -574,28 +627,28 @@
               </div>
             </div>
             <ul class="exp-item__bullets">
-              <li>Executed an end-to-end data analytics simulation mirroring Deloitte's forensic technology and advisory workflows.</li>
-              <li>Developed interactive Tableau dashboards that surfaced KPI trends and revealed key risk patterns in business data.</li>
-              <li>Engineered Excel-based cleaning and classification pipelines to transform messy case data into analysis-ready tables and concise findings.</li>
+              <li>Modeled simulated client advisory data mapping out complex forensic risk indices.</li>
+              <li>Engineered interactive Tableau visual stories breaking down operations across regional branches.</li>
+              <li>Sanitized and indexed corporate transaction sets in advanced Excel pipelines, delivering executive summaries.</li>
             </ul>
             <div class="exp-item__tags">
-              <span class="tag">Tableau</span>
-              <span class="tag">Excel</span>
-              <span class="tag">KPI Storytelling</span>
+              <span class="tag">Tableau BI</span>
+              <span class="tag">Data Wrangling</span>
+              <span class="tag">Risk Analysis</span>
             </div>
           </div>
         </div>
 
-        <!-- Entry 3 — CodeBind -->
-        <div class="exp-item reveal-up delay-2">
+        <!-- Job 3 -->
+        <div class="exp-item">
           <div class="exp-item__left">
             <div class="exp-item__dot"></div>
             <div class="exp-item__line"></div>
           </div>
-          <div class="exp-item__content">
+          <div class="exp-item__content hover-glow-card">
             <div class="exp-item__header">
               <div class="exp-item__title-block">
-                <h3 class="exp-item__role">Intern — Embedded Systems & Applied AI</h3>
+                <h3 class="exp-item__role">Embedded Systems &amp; Applied AI Intern</h3>
                 <span class="exp-item__company">CodeBind Technologies</span>
               </div>
               <div class="exp-item__meta">
@@ -604,26 +657,26 @@
               </div>
             </div>
             <ul class="exp-item__bullets">
-              <li>Completed intensive training in embedded systems and applied AI, prototyping IoT data-capture and control applications.</li>
-              <li>Linked sensor streams to analytics logic to demonstrate real-time monitoring and automation scenarios.</li>
+              <li>Prototyped local IoT node hubs executing sensor readings using low-latency ESP32 controllers.</li>
+              <li>Integrated edge analytics scripts mapping analog telemetry data streams directly to digital endpoints.</li>
             </ul>
             <div class="exp-item__tags">
-              <span class="tag">ESP32</span>
-              <span class="tag">IoT</span>
-              <span class="tag">Embedded Systems</span>
+              <span class="tag">ESP32 Ingestion</span>
+              <span class="tag">Edge AI</span>
+              <span class="tag">IoT Nodes</span>
             </div>
           </div>
         </div>
 
-        <!-- Entry 4 — BS Hospital -->
-        <div class="exp-item reveal-up delay-3">
+        <!-- Job 4 -->
+        <div class="exp-item">
           <div class="exp-item__left">
             <div class="exp-item__dot"></div>
           </div>
-          <div class="exp-item__content">
+          <div class="exp-item__content hover-glow-card">
             <div class="exp-item__header">
               <div class="exp-item__title-block">
-                <h3 class="exp-item__role">Clinical Intern</h3>
+                <h3 class="exp-item__role">Clinical Observer &amp; Intern</h3>
                 <span class="exp-item__company">BS Hospital</span>
               </div>
               <div class="exp-item__meta">
@@ -632,71 +685,68 @@
               </div>
             </div>
             <ul class="exp-item__bullets">
-              <li>Investigated biomedical equipment and patient-monitoring workflows, mapping how clinical signals are captured and stored in practice.</li>
-              <li>Documented data paths from bedside monitors to hospital systems, building domain context for later healthcare analytics work.</li>
+              <li>Analyzed patient monitoring equipment pathways, cataloging diagnostic signal transmission workflows.</li>
+              <li>Identified critical data ingestion points in acute clinical setups, building baseline knowledge for healthcare product development.</li>
             </ul>
             <div class="exp-item__tags">
-              <span class="tag">Biomedical Equipment</span>
-              <span class="tag">Clinical Workflows</span>
-              <span class="tag">Patient Monitoring</span>
+              <span class="tag">Clinical Signals</span>
+              <span class="tag">Instrumentation Diagnostics</span>
+              <span class="tag">Hospital Ingestion</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       RESEARCH
+       RESEARCH & ACADEMIC WORK SECTION
   ═══════════════════════════════════════════════ -->
   <section class="research section" id="research">
     <div class="container">
-      <div class="research__header reveal-up">
-        <p class="section-label">Academic Work</p>
-        <h2 class="section-title">Research &amp; Publication</h2>
+      <div class="research__header">
+        <p class="section-label">Academic Contribution</p>
+        <h2 class="section-title">Research &amp; Publications</h2>
       </div>
 
-      <div class="research__card reveal-up delay-1">
+      <div class="research__card hover-glow-card">
         <div class="research__card-left">
           <div class="research__status-badge">
             <span class="research__status-dot"></span>
-            Submitted for Publication
+            Submitted for Publication · Under Review
           </div>
           <h3 class="research__title">Flexible RF-Based Wearable Sensor for ACL Strain Monitoring</h3>
-          <p class="research__abstract">A textile-based antenna design for non-invasive monitoring of anterior cruciate ligament strain. The system detects changes in resonance frequency caused by mechanical strain, experimentally validated through vector network analysis. Provides a practical, non-invasive alternative for real-time ligament health monitoring — combining theoretical design with experimental implementation.</p>
+          <p class="research__abstract">
+            Pioneered a wearable, textile-integrated radio-frequency (RF) sensor designed for the non-invasive, continuous assessment of Anterior Cruciate Ligament (ACL) mechanical strain. The system detects minuscule shifts in electromagnetic resonance frequency linked to ligament tension, validated via rigorous Vector Network Analysis (VNA). This bridges soft electronics fabrication with clinical physical therapy, offering a low-cost alternative to post-op patient triage.
+          </p>
 
           <div class="research__tags">
-            <span class="tag">Wearable Technology</span>
-            <span class="tag">RF Sensing</span>
-            <span class="tag">Biomedical Sensing</span>
             <span class="tag">Flexible Electronics</span>
-            <span class="tag">ACL Monitoring</span>
+            <span class="tag">RF Sensing</span>
+            <span class="tag">ACL Triage</span>
+            <span class="tag">Biomaterials</span>
+            <span class="tag">Instrumentation</span>
           </div>
 
           <div class="research__meta">
             <div class="research__meta-item">
-              <span class="research__meta-label">Domain</span>
-              <span class="research__meta-value">Biomedical Engineering</span>
+              <span class="research__meta-label">Affiliated Institution</span>
+              <span class="research__meta-value">Karunya Institute of Technology and Sciences</span>
             </div>
             <div class="research__meta-item">
-              <span class="research__meta-label">Method</span>
-              <span class="research__meta-value">Vector Network Analysis</span>
+              <span class="research__meta-label">Primary Method</span>
+              <span class="research__meta-value">Electromagnetic Resonance &amp; VNA Validation</span>
             </div>
             <div class="research__meta-item">
-              <span class="research__meta-label">Status</span>
-              <span class="research__meta-value">Under Review</span>
-            </div>
-            <div class="research__meta-item">
-              <span class="research__meta-label">Institution</span>
-              <span class="research__meta-value">Karunya Institute of Technology</span>
+              <span class="research__meta-label">Current Status</span>
+              <span class="research__meta-value">Under Review (International Journal of Electronics)</span>
             </div>
           </div>
         </div>
 
         <div class="research__card-right">
-          <div style="width: 100%; border-radius: var(--radius-lg); overflow: hidden; background: transparent;">
-            <img src="images/research-paper.jpg" alt="Research Publication Paper" class="portfolio-img" style="width: 100%; height: auto; object-fit: contain; display: block;" />
+          <div class="research__image-container">
+            <img src="images/research-paper.jpg" alt="Research Publication Paper Preview" class="portfolio-img" />
           </div>
         </div>
       </div>
@@ -704,94 +754,83 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       TECH STACK
+       TECH STACK SECTION
   ═══════════════════════════════════════════════ -->
   <section class="stack section" id="stack">
     <div class="container">
-      <div class="stack__header reveal-up">
-        <p class="section-label">Tools &amp; Technologies</p>
-        <h2 class="section-title">My Tech Stack</h2>
+      <div class="stack__header">
+        <p class="section-label">Core Capabilities</p>
+        <h2 class="section-title">Intelligent Arsenal</h2>
       </div>
 
-      <div class="stack__grid reveal-up delay-1">
-
-        <div class="stack__category">
-          <p class="stack__category-label">Analytics</p>
+      <div class="stack__grid">
+        <!-- Category 1 -->
+        <div class="stack__category hover-glow-card">
+          <p class="stack__category-label">Business Intelligence &amp; Analytics</p>
           <div class="stack__items">
-            <div class="stack__item"><span class="stack__item-icon">Tab</span><span>Tableau</span></div>
-            <div class="stack__item"><span class="stack__item-icon">PBI</span><span>Power BI</span></div>
-            <div class="stack__item"><span class="stack__item-icon">XL</span><span>Excel (Pivot Tables, VLOOKUP, data cleaning/classification)</span></div>
-            <div class="stack__item"><span class="stack__item-icon">EDA</span><span>Exploratory Data Analysis (EDA)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Tb</span><span>Tableau (Enterprise Dashboards, KPI Mapping)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Pb</span><span>Power BI (Interactive Corporate Analytics)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Ex</span><span>Advanced Excel (VLOOKUP, Pivot Tables, Macro Cleaning)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Ed</span><span>Exploratory Data Analysis (EDA, Statistical Triage)</span></div>
           </div>
         </div>
 
-        <div class="stack__category">
-          <p class="stack__category-label">Data &amp; SQL</p>
+        <!-- Category 2 -->
+        <div class="stack__category hover-glow-card">
+          <p class="stack__category-label">Data Systems &amp; Programming</p>
           <div class="stack__items">
-            <div class="stack__item"><span class="stack__item-icon">Py</span><span>Python (Pandas, NumPy, scikit-learn, Matplotlib, Seaborn)</span></div>
-            <div class="stack__item"><span class="stack__item-icon">SQL</span><span>SQL (MySQL, PostgreSQL)</span></div>
-            <div class="stack__item"><span class="stack__item-icon">DB</span><span>Data Modelling</span></div>
-            <div class="stack__item"><span class="stack__item-icon">PL</span><span>Basic Data Pipelines</span></div>
-            <div class="stack__item"><span class="stack__item-icon">Log</span><span>Log Analysis</span></div>
-            <div class="stack__item"><span class="stack__item-icon">FE</span><span>Feature Engineering</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Py</span><span>Python (Pandas, NumPy, scikit-learn, SciPy)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Sq</span><span>SQL (MySQL, PostgreSQL Database Architecture)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Dm</span><span>Data Modeling &amp; Normalization Logic</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Dp</span><span>ETL Data Pipelines &amp; Log Forensic Parsing</span></div>
           </div>
         </div>
 
-        <div class="stack__category">
-          <p class="stack__category-label">ML &amp; AI</p>
+        <!-- Category 3 -->
+        <div class="stack__category hover-glow-card">
+          <p class="stack__category-label">Advanced AI &amp; Machine Learning</p>
           <div class="stack__items">
-            <div class="stack__item"><span class="stack__item-icon">TF</span><span>TensorFlow, Keras</span></div>
-            <div class="stack__item"><span class="stack__item-icon">CNN</span><span>CNNs</span></div>
-            <div class="stack__item"><span class="stack__item-icon">ViT</span><span>Vision Transformers (ViT)</span></div>
-            <div class="stack__item"><span class="stack__item-icon">LLM</span><span>OpenAI/LLM integration</span></div>
-            <div class="stack__item"><span class="stack__item-icon">Vb</span><span>Vibe coding</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Tf</span><span>TensorFlow &amp; Keras (Deep Network Design)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Cn</span><span>Convolutional Neural Networks (Clinical CV)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Vt</span><span>Vision Transformers (ViT Medical Screening)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Ai</span><span>OpenAI API Integration &amp; LLM Automation Flows</span></div>
           </div>
         </div>
 
-        <div class="stack__category">
-          <p class="stack__category-label">Tools</p>
+        <!-- Category 4 -->
+        <div class="stack__category hover-glow-card">
+          <p class="stack__category-label">Workflow, Hardware &amp; Tooling</p>
           <div class="stack__items">
-            <div class="stack__item"><span class="stack__item-icon">Git</span><span>Git</span></div>
-            <div class="stack__item"><span class="stack__item-icon">NB</span><span>Jupyter Notebook, Google Colab</span></div>
-            <div class="stack__item"><span class="stack__item-icon">VSC</span><span>VS Code</span></div>
-            <div class="stack__item"><span class="stack__item-icon">St</span><span>Streamlit, FastAPI</span></div>
-            <div class="stack__item"><span class="stack__item-icon">n8n</span><span>n8n workflow automation</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Gt</span><span>Git &amp; Version Control (Vercel deployment flows)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Io</span><span>ESP32 Hardware Prototyping &amp; Serial Telemetry</span></div>
+            <div class="stack__item"><span class="stack__item-icon">Fa</span><span>Streamlit &amp; FastAPI (Rapid Interface Deployments)</span></div>
+            <div class="stack__item"><span class="stack__item-icon">N8</span><span>n8n Workflow Design (Advanced Agent Operations)</span></div>
           </div>
         </div>
-
-        <div class="stack__category">
-          <p class="stack__category-label">Soft Skills</p>
-          <div class="stack__items">
-            <div class="stack__item"><span class="stack__item-icon">Com</span><span>Formal communication</span></div>
-            <div class="stack__item"><span class="stack__item-icon">Pln</span><span>Planning and prioritisation</span></div>
-            <div class="stack__item"><span class="stack__item-icon">Ldr</span><span>Cross-functional leadership</span></div>
-            <div class="stack__item"><span class="stack__item-icon">Wrt</span><span>Business report writing</span></div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
-       CONTACT
+       CONTACT & FORM SECTION
   ═══════════════════════════════════════════════ -->
   <section class="contact section" id="contact">
     <div class="container">
       <div class="contact__grid">
-
-        <div class="contact__left reveal-left">
-          <p class="section-label">Get in Touch</p>
-          <h2 class="contact__title">Ready to talk?<br />Let's build something<br />worth building.</h2>
+        <div class="contact__left">
+          <p class="section-label">Initiate Collaboration</p>
+          <h2 class="contact__title">Let's build systems that perform.</h2>
           
-          <div style="margin: var(--space-xl) 0; position: relative; max-width: 280px;" class="reveal-up delay-1">
-            <img src="images/tworks.jpg" alt="Karthikeyan at T-Works" style="width: 100%; border-radius: var(--radius-lg); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);" onmouseover="this.style.transform='scale(1.03) rotate(-1deg)'" onmouseout="this.style.transform='scale(1) rotate(0)'" />
-            <div style="position: absolute; bottom: -15px; right: -15px; background: var(--clr-accent); color: var(--clr-bg); font-weight: 700; padding: 0.6rem 1.2rem; border-radius: 100px; font-size: 0.85rem; box-shadow: 0 10px 20px rgba(0,0,0,0.3);">
-              Let's connect 👋
+          <div class="contact__image-wrap-tworks">
+            <img src="images/tworks.jpg" alt="V Karthikeyan at T-Works Laboratory" class="contact__tworks-img" />
+            <div class="contact__tworks-badge">
+              Coimbatore · Nilgiris · Remote 👋
             </div>
           </div>
 
-          <p class="contact__sub">Whether you're starting fresh or have a challenge that needs a structured solution — I'd love to hear about it.</p>
+          <p class="contact__sub">
+            Whether looking to streamline telemetry arrays, run rigorous predictive modeling pipelines, or secure operational tech management — let's align.
+          </p>
 
           <div class="contact__details">
             <a href="mailto:karthikeyan6912@gmail.com" class="contact__detail-item" id="contactEmail">
@@ -813,34 +852,33 @@
           </div>
         </div>
 
-        <div class="contact__right reveal-right">
+        <div class="contact__right">
           <form class="contact__form" id="contactForm">
             <div class="contact__form-row">
               <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="First Name" placeholder="John" autocomplete="given-name" required />
+                <input type="text" id="firstName" name="First Name" placeholder="e.g. John" autocomplete="given-name" required />
               </div>
               <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="Last Name" placeholder="Doe" autocomplete="family-name" required />
+                <input type="text" id="lastName" name="Last Name" placeholder="e.g. Doe" autocomplete="family-name" required />
               </div>
             </div>
             <div class="form-group">
               <label for="emailInput">Email Address</label>
-              <input type="email" id="emailInput" name="Email" placeholder="john@example.com" autocomplete="email" required />
+              <input type="email" id="emailInput" name="Email" placeholder="e.g. john@example.com" autocomplete="email" required />
             </div>
             <div class="form-group">
               <label for="subject">Subject</label>
-              <input type="text" id="subject" name="_subject" placeholder="What's on your mind?" required />
+              <input type="text" id="subject" name="_subject" placeholder="What's your project scope?" required />
             </div>
             <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="body" placeholder="Tell me about your project or challenge..." rows="5" required></textarea>
+              <label for="message">Message Scope Details</label>
+              <textarea id="message" name="body" placeholder="Describe the predictive analytics, software challenge, or management scope..." rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--full" id="contactSubmit">Send Message →</button>
+            <button type="submit" class="btn btn--primary btn--full" id="contactSubmit">Submit RFP Details →</button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
@@ -854,7 +892,7 @@
         <div class="footer__brand">
           <span class="nav__logo-name">Karthikeyan<span class="nav__logo-dot">.</span></span>
           <p class="footer__tagline">Designing systems that turn data into decisions.</p>
-          <p class="footer__tagline" style="margin-top:0.25rem; font-size:0.78rem;">B.Tech Biomedical Engineering (Data Science) · Karunya Institute · Coimbatore</p>
+          <p class="footer__tagline" style="margin-top:0.4rem; font-size:0.8rem; opacity:0.6;">B.Tech Biomedical Engineering &amp; Data Science · Karunya Institute</p>
         </div>
 
         <div class="footer__cols">
@@ -881,12 +919,20 @@
       </div>
 
       <div class="footer__bottom">
-        <p>© 2025 V Karthikeyan. All rights reserved.</p>
-        <p>Designed &amp; built with purpose.</p>
+        <p>© 2026 V Karthikeyan. All rights reserved.</p>
+        <p>Architected for executive results.</p>
       </div>
     </div>
   </footer>
 
+  <!-- GSAP Animation Core Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+
+  <!-- Core Javascript -->
   <script src="js/main.js"></script>
 </body>
 </html>

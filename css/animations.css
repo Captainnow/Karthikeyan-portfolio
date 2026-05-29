@@ -1,48 +1,69 @@
 /* ═══════════════════════════════════════════════════════════════
-   ANIMATIONS — VEAULY-STYLE SCROLL INTERACTIONS
-   Cinematic reveal, parallax, stagger, text-clip, zoom
-═══════════════════════════════════════════════════════════════ */
+   ANIMATIONS & MOTION SYSTEM
+   Cinematic Transitions & GSAP-compatibility
+   ═══════════════════════════════════════════════════════════════ */
 
-/* ── Base scroll-reveal states ───────────────────────────────── */
-.reveal-up,
-.reveal-left,
-.reveal-right,
-.reveal-scale,
-.reveal-clip {
-  opacity: 0;
-  will-change: transform, opacity;
-  transition:
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    clip-path 1s cubic-bezier(0.16, 1, 0.3, 1);
+/* ── GSAP CONFLICT RESOLUTION ──
+   When GSAP is active, we disable CSS transition animations on these elements
+   so they don't fight GSAP's frame updates. */
+body.gsap-active .reveal-item,
+body.gsap-active .reveal-up,
+body.gsap-active .reveal-left,
+body.gsap-active .reveal-right,
+body.gsap-active .reveal-scale,
+body.gsap-active .reveal-clip,
+body.gsap-active .bento-card,
+body.gsap-active .expertise__item,
+body.gsap-active .project-row,
+body.gsap-active .company-card,
+body.gsap-active .exp-item,
+body.gsap-active .exp-item__content,
+body.gsap-active .research__card,
+body.gsap-active .stack__category,
+body.gsap-active .contact__left,
+body.gsap-active .contact__right,
+body.gsap-active .footer__inner {
+  transition: none !important;
 }
 
-.reveal-up    { transform: translateY(80px); }
-.reveal-left  { transform: translateX(-80px); }
-.reveal-right { transform: translateX(80px); }
-.reveal-scale { transform: scale(0.9); }
-.reveal-clip  { clip-path: inset(100% 0 0 0); transform: none; }
+/* ── CSS Fallbacks (Only active if GSAP is not running) ── */
+body:not(.gsap-active) .reveal-up,
+body:not(.gsap-active) .reveal-left,
+body:not(.gsap-active) .reveal-right,
+body:not(.gsap-active) .reveal-scale,
+body:not(.gsap-active) .reveal-clip {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 1s var(--ease-smooth),
+              transform 1s var(--ease-smooth),
+              clip-path 1.2s var(--ease-smooth);
+}
 
-.reveal-up.visible,
-.reveal-left.visible,
-.reveal-right.visible,
-.reveal-scale.visible,
-.reveal-clip.visible {
+body:not(.gsap-active) .reveal-up    { transform: translateY(60px); }
+body:not(.gsap-active) .reveal-left  { transform: translateX(-60px); }
+body:not(.gsap-active) .reveal-right { transform: translateX(60px); }
+body:not(.gsap-active) .reveal-scale { transform: scale(0.95); }
+body:not(.gsap-active) .reveal-clip  { clip-path: inset(100% 0 0 0); }
+
+body:not(.gsap-active) .reveal-up.visible,
+body:not(.gsap-active) .reveal-left.visible,
+body:not(.gsap-active) .reveal-right.visible,
+body:not(.gsap-active) .reveal-scale.visible,
+body:not(.gsap-active) .reveal-clip.visible {
   opacity: 1;
   transform: translate(0, 0) scale(1);
   clip-path: inset(0 0 0 0);
 }
 
-/* Stagger delays — cascade effect */
-.delay-1 { transition-delay: 0.12s; }
-.delay-2 { transition-delay: 0.24s; }
-.delay-3 { transition-delay: 0.36s; }
-.delay-4 { transition-delay: 0.48s; }
-.delay-5 { transition-delay: 0.60s; }
+/* Fallback stagger delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
 
-/* ── Hero entrance (auto-triggered, no observer needed) ──────── */
+/* ── Hero Entrance Keyframes (CSS Native) ── */
 @keyframes hero-rise {
-  from { opacity: 0; transform: translateY(50px); }
+  from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -51,229 +72,103 @@
   to   { opacity: 1; }
 }
 
-.hero__content .reveal-up {
+/* Hero fallbacks in case JS fails */
+body:not(.gsap-active) .hero__content .reveal-item {
   animation: hero-rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
 }
-.hero__content .reveal-up.delay-1 { animation-delay: 0.2s; }
-.hero__content .reveal-up.delay-2 { animation-delay: 0.4s; }
-.hero__content .reveal-up.delay-3 { animation-delay: 0.6s; }
-.hero__content .reveal-up.delay-4 { animation-delay: 0.8s; }
+body:not(.gsap-active) .hero__content .reveal-item:nth-child(1) { animation-delay: 0.1s; }
+body:not(.gsap-active) .hero__content .reveal-item:nth-child(2) { animation-delay: 0.3s; }
+body:not(.gsap-active) .hero__content .reveal-item:nth-child(3) { animation-delay: 0.5s; }
+body:not(.gsap-active) .hero__content .reveal-item:nth-child(4) { animation-delay: 0.7s; }
 
-.hero__scroll-indicator.reveal-up {
-  animation: hero-rise 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
-  opacity: 0;
+/* ── Roles Slider Track Animation ── */
+@keyframes role-slide {
+  0%, 15% { transform: translateY(0); }
+  20%, 35% { transform: translateY(-1.5em); }
+  40%, 55% { transform: translateY(-3em); }
+  60%, 75% { transform: translateY(-4.5em); }
+  80%, 95% { transform: translateY(-6em); }
+  100% { transform: translateY(-7.5em); }
 }
 
-/* ── Headline letter-by-letter stagger ───────────────────────── */
-.hero__headline .char {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(40px) rotateX(40deg);
-  animation: char-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.hero__roles-track {
+  animation: role-slide 10s cubic-bezier(0.16, 1, 0.3, 1) infinite;
 }
 
-@keyframes char-rise {
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
+/* ── Horizontal Infinite Marquee ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* ── Section title text-clip reveal ──────────────────────────── */
-.section-title {
-  position: relative;
-  overflow: hidden;
+.hero__domain-track {
+  animation: marquee 40s linear infinite;
 }
 
-.section-title.animate-in {
-  animation: text-clip-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* ── Floating Scroll Indicator ── */
+@keyframes scroll-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
-@keyframes text-clip-reveal {
-  from {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
+.hero__scroll-indicator {
+  animation: scroll-float 2.5s ease-in-out infinite;
 }
 
-/* ── Parallax depth layers ───────────────────────────────────── */
-[data-parallax] {
-  will-change: transform;
-  transition: transform 0.1s linear;
+@keyframes scroll-line-drop {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  80% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
 }
 
-/* ── Project row — image cinematic zoom on scroll ────────────── */
-.project-row__image-col {
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-}
-
-.project-row__image-col .img-placeholder,
-.project-row__image-col img {
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: scale(1.08);
-}
-
-.project-row.visible .project-row__image-col .img-placeholder,
-.project-row.visible .project-row__image-col img {
-  transform: scale(1);
-}
-
-.project-row:hover .project-row__image-col .img-placeholder,
-.project-row:hover .project-row__image-col img {
-  transform: scale(1.03);
-}
-
-/* ── Section divider line animation ──────────────────────────── */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: var(--clr-border);
-  position: relative;
-  overflow: hidden;
-}
-
-.section-divider::after {
+.hero__scroll-line::after {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  display: block;
+  width: 1px;
   height: 100%;
-  background: linear-gradient(90deg, var(--clr-accent), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--clr-accent);
+  animation: scroll-line-drop 2s infinite ease-in-out;
 }
 
-.section-divider.visible::after {
-  transform: scaleX(1);
+/* ── Section Title Text Clip (CSS Only Fallback) ── */
+@keyframes text-clip-reveal {
+  from { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
 
-/* ── Expertise items — sliding number + expanding line ───────── */
-.expertise__item {
-  position: relative;
-  overflow: hidden;
+body:not(.gsap-active) .section-title.animate-in {
+  animation: text-clip-reveal 1.2s var(--ease-smooth) forwards;
 }
 
-.expertise__item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--clr-accent), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+/* ── Interactive Card Hover Animations ── */
+.hover-glow-card {
+  transition: border-color var(--dur-base) var(--ease-smooth),
+              transform var(--dur-base) var(--ease-smooth),
+              box-shadow var(--dur-base) var(--ease-smooth);
 }
 
-.expertise__item:hover::after { transform: scaleX(1); }
-
-.expertise__num {
-  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.hover-glow-card:hover {
+  transform: translateY(-5px);
 }
 
-.expertise__item:hover .expertise__num {
-  color: var(--clr-accent);
-  transform: translateX(4px);
+/* Tilt & scale on project image */
+.project-row__image-col {
+  transition: transform var(--dur-slow) var(--ease-smooth),
+              box-shadow var(--dur-slow) var(--ease-smooth);
 }
 
-.expertise__item-inner {
-  transition: padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.project-row:hover .project-row__image-col {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7);
 }
 
-/* ── Experience timeline dot pulse ───────────────────────────── */
-@keyframes timeline-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 169, 110, 0.5); }
-  50%      { box-shadow: 0 0 0 8px rgba(200, 169, 110, 0); }
+.project-row:hover .portfolio-img {
+  transform: scale(1.04);
 }
 
-.exp-item.visible .exp-item__dot {
-  animation: timeline-pulse 2s ease-in-out 0.5s;
-}
-
-.exp-item__line {
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-}
-
-.exp-item.visible .exp-item__line {
-  transform: scaleY(1);
-}
-
-/* ── Counter number animation ────────────────────────────────── */
-@keyframes count-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.about__stat-number.counting {
-  animation: count-up 0.5s ease-out forwards;
-}
-
-/* ── Stats grid staggered reveal ─────────────────────────────── */
-.about__stats .about__stat {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.about__stats.stats-visible .about__stat:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
-.about__stats.stats-visible .about__stat:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.1s; }
-.about__stats.stats-visible .about__stat:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.2s; }
-.about__stats.stats-visible .about__stat:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.3s; }
-
-/* ── Stack items stagger enter ───────────────────────────────── */
-.stack__category {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.stack__grid.visible .stack__category:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
-.stack__grid.visible .stack__category:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.12s; }
-.stack__grid.visible .stack__category:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.24s; }
-.stack__grid.visible .stack__category:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.36s; }
-
-.stack__item {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
-}
-.stack__item:hover {
-  transform: translateX(6px);
-}
-
-/* ── Tag hover glow ──────────────────────────────────────────── */
-.tag {
-  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
-}
-.tag:hover {
-  box-shadow: 0 0 14px rgba(200, 169, 110, 0.15);
-  transform: translateY(-1px);
-}
-
-/* ── Button interactions ─────────────────────────────────────── */
-.btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: rgba(255,255,255,0.12);
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.btn:active::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* ── Nav underline active ────────────────────────────────────── */
+/* ── Navigation Link Underline ── */
 .nav__link {
   position: relative;
 }
@@ -282,13 +177,13 @@
   content: '';
   position: absolute;
   bottom: 2px;
-  left: 0.9rem;
-  right: 0.9rem;
+  left: 1.1rem;
+  right: 1.1rem;
   height: 1px;
-  background: currentColor;
+  background: var(--clr-accent);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s var(--ease-smooth);
 }
 
 .nav__link:hover::after,
@@ -297,126 +192,38 @@
   transform-origin: left;
 }
 
-/* ── Research card shimmer ───────────────────────────────────── */
-@keyframes shimmer {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.research__card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(200, 169, 110, 0.04) 50%,
-    transparent 100%
-  );
-  animation: shimmer 6s ease-in-out infinite 2s;
-  pointer-events: none;
-}
-
-/* ── Research card entrance ──────────────────────────────────── */
-.research__card {
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
-}
-
-/* ── Placeholder breathing ───────────────────────────────────── */
-@keyframes placeholder-breathe {
-  0%, 100% { opacity: 1; border-color: var(--clr-placeholder-border); }
-  50%      { opacity: 0.6; border-color: rgba(200, 169, 110, 0.15); }
-}
-
-.img-placeholder {
-  animation: placeholder-breathe 4s ease-in-out infinite;
-}
-.img-placeholder:hover {
-  animation-play-state: paused;
-  border-color: rgba(200, 169, 110, 0.35);
-  transition: border-color 0.3s ease;
-}
-
-/* ── Form input focus ────────────────────────────────────────── */
-.form-group input,
-.form-group textarea {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
-}
-
-.form-group input:hover,
-.form-group textarea:hover {
-  border-color: #3a3a3a;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  transform: translateY(-1px);
-}
-
-/* ── Contact detail items stagger ────────────────────────────── */
-.contact__detail-item {
-  transition: color 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.contact__detail-item:hover {
-  transform: translateX(6px);
-}
-
-/* ── Scroll progress bar ─────────────────────────────────────── */
+/* ── Scroll Progress Bar ── */
 #scrollProgress {
   position: fixed;
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #C8A96E, #d4b87c);
+  background: linear-gradient(90deg, var(--clr-accent), #f1d5a3);
   z-index: 9999;
-  transition: width 0.08s linear;
   width: 0%;
 }
 
-/* ── Mobile nav link animation ───────────────────────────────── */
-.nav__links.open .nav__link {
-  animation: hero-rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.nav__links.open .nav__link:nth-child(1) { animation-delay: 0.05s; }
-.nav__links.open .nav__link:nth-child(2) { animation-delay: 0.10s; }
-.nav__links.open .nav__link:nth-child(3) { animation-delay: 0.15s; }
-.nav__links.open .nav__link:nth-child(4) { animation-delay: 0.20s; }
-.nav__links.open .nav__link:nth-child(5) { animation-delay: 0.25s; }
-.nav__links.open .nav__link:nth-child(6) { animation-delay: 0.30s; }
-
-/* ── Section background fade transitions ─────────────────────── */
-.section {
-  transition: background-color 0.4s ease;
-}
-
-/* ── About award badge entrance ──────────────────────────────── */
-.about__award {
+/* ── Custom Pointer Circle Glow ── */
+#customCursorGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(var(--clr-accent-rgb), 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transform: translateX(-20px);
-  transition: opacity 0.6s ease 0.3s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+  transition: opacity 0.5s ease;
 }
 
-.about__text-col.visible .about__award {
+body:hover #customCursorGlow {
   opacity: 1;
-  transform: translateX(0);
 }
 
-/* ── Footer reveal ───────────────────────────────────────────── */
-.footer__inner {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.footer.visible .footer__inner {
-  opacity: 1;
-  transform: none;
-}
-
-/* ── Prefers-reduced-motion override ─────────────────────────── */
+/* ── Prefers-reduced-motion Overrides ── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -426,6 +233,7 @@
     transition-duration: 0.01ms !important;
   }
 
+  .reveal-item,
   .reveal-up,
   .reveal-left,
   .reveal-right,
@@ -434,5 +242,16 @@
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
+  }
+
+  .hero__roles-track,
+  .hero__domain-track,
+  .hero__scroll-indicator,
+  .hero__scroll-line::after {
+    animation: none !important;
+  }
+
+  #customCursorGlow {
+    display: none !important;
   }
 }
