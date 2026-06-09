@@ -13,7 +13,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="css/style.css" />
@@ -24,8 +24,9 @@
   <!-- Scroll Progress Bar -->
   <div id="scrollProgress"></div>
 
-  <!-- Custom Cursor Glow -->
-  <div id="customCursorGlow"></div>
+  <!-- Custom Dual Cursor Followers -->
+  <div id="customCursorDot"></div>
+  <div id="customCursorRing"></div>
 
   <!-- ═══════════════════════════════════════════════
        NAVIGATION
@@ -58,48 +59,50 @@
     <div class="hero__bg-grid"></div>
     <div class="hero__light-orb"></div>
 
-    <div class="hero__content">
-      <!-- Tag / Status Badge -->
-      <div class="hero__status-badge reveal-item">
-        <span class="hero__status-dot"></span>
-        <span class="hero__status-text">GM of Technology @ Rapha MedTech · Boeing Build 4.0 Winner</span>
-      </div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <!-- Tag / Status Badge -->
+        <div class="hero__status-badge reveal-item">
+          <span class="hero__status-dot"></span>
+          <span class="hero__status-text">GM of Technology @ Rapha MedTech · Boeing Build 4.0 Winner</span>
+        </div>
 
-      <!-- Hero Cinematic Headlines -->
-      <h1 class="hero__headline reveal-item">
-        <span class="hero__line-wrap"><span class="hero__line">I build systems</span></span><br />
-        <span class="hero__line-wrap"><span class="hero__line">that turn <em class="hero__headline-em">data</em></span></span><br />
-        <span class="hero__line-wrap"><span class="hero__line">into decisions.</span></span>
-      </h1>
+        <!-- Hero Cinematic Headlines -->
+        <h1 class="hero__headline reveal-item">
+          <span class="hero__line-wrap"><span class="hero__line">I build systems</span></span><br />
+          <span class="hero__line-wrap"><span class="hero__line">that turn <em class="hero__headline-em">data</em></span></span><br />
+          <span class="hero__line-wrap"><span class="hero__line">into decisions.</span></span>
+        </h1>
 
-      <p class="hero__subtext reveal-item">
-        Designing and leading data-driven systems at the intersection of business strategy, predictive analytics, AI, and healthcare technology.
-      </p>
+        <p class="hero__subtext reveal-item">
+          Designing and leading data-driven systems at the intersection of business strategy, predictive analytics, AI, and healthcare technology.
+        </p>
 
-      <!-- Roles Slider -->
-      <div class="hero__roles reveal-item">
-        <span class="hero__roles-fixed">I AM A </span>
-        <div class="hero__roles-wrap">
-          <div class="hero__roles-track">
-            <span>GENERAL MANAGER</span>
-            <span>DATA ANALYST</span>
-            <span>BIOMEDICAL ENGINEER</span>
-            <span>ML DEVELOPER</span>
-            <span>GENERAL MANAGER</span>
+        <!-- Roles Slider -->
+        <div class="hero__roles reveal-item">
+          <span class="hero__roles-fixed">I AM A </span>
+          <div class="hero__roles-wrap">
+            <div class="hero__roles-track">
+              <span>GENERAL MANAGER</span>
+              <span>DATA ANALYST</span>
+              <span>BIOMEDICAL ENGINEER</span>
+              <span>ML DEVELOPER</span>
+              <span>GENERAL MANAGER</span>
+            </div>
           </div>
+        </div>
+
+        <div class="hero__actions reveal-item">
+          <a href="#projects" class="btn btn--primary" id="heroViewWork">View Selected Work</a>
+          <a href="#about"    class="btn btn--ghost"   id="heroAbout">About Me</a>
         </div>
       </div>
 
-      <div class="hero__actions reveal-item">
-        <a href="#projects" class="btn btn--primary" id="heroViewWork">View Selected Work</a>
-        <a href="#about"    class="btn btn--ghost"   id="heroAbout">About Me</a>
-      </div>
-    </div>
-
-    <!-- Executive Hero Portrait Card -->
-    <div class="hero__image-container reveal-item" id="heroArtisticImage">
-      <div class="hero__image-frame">
-        <img src="images/hero-portrait.jpg" alt="V Karthikeyan General Manager" class="hero__image-art" />
+      <!-- Executive Hero Portrait Card -->
+      <div class="hero__image-container reveal-item" id="heroArtisticImage">
+        <div class="hero__image-frame">
+          <img src="images/hero-portrait.jpg" alt="V Karthikeyan General Manager" class="hero__image-art" />
+        </div>
       </div>
     </div>
 
@@ -353,7 +356,39 @@
       </article>
 
       <!-- Project 2 -->
-      <article class="project-row project-row--alt" id="project-retinopathy">
+      <article class="project-row project-row--alt" id="project-cortex">
+        <div class="container">
+          <div class="project-row__inner">
+            <div class="project-row__image-col">
+              <div class="img-placeholder" aria-label="Cortex Intel preview">
+                <img src="images/cortex-intel.png" alt="Cortex Intel Healthcare Intelligence Platform" class="portfolio-img" />
+              </div>
+            </div>
+            <div class="project-row__content-col">
+              <div class="project-row__meta">
+                <span class="project-row__num">PROJECT 02</span>
+                <div class="project-row__tags">
+                  <span class="tag">Healthcare SaaS</span>
+                  <span class="tag">Live APIs</span>
+                  <span class="tag">AI Copilot</span>
+                </div>
+              </div>
+              <h3 class="project-row__title">Cortex Intel — Healthcare Intelligence Platform</h3>
+              <div class="project-row__desc">
+                <p class="project-row__lead-text">A 100% free analytics and clinical diagnostics platform tracking live FDA recalls and predicting patient risks.</p>
+                <ul class="project-row__bullets">
+                  <li><strong>Live Data Ingestion:</strong> Integrates openFDA API to track device recalls/enforcements, and WHO GHO API for global health indicator benchmarking.</li>
+                  <li><strong>Predictive Intelligence:</strong> Deploys scikit-learn models to predict Heart Disease &amp; Diabetes risk profiles using UCI ML and Kaggle clinical data.</li>
+                  <li><strong>Hybrid AI Copilot:</strong> Combines Gemini 2.5 Free Tier, Groq API (20 req/min), and local Ollama models to deliver zero-cost natural language clinical insights.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-row" id="project-retinopathy">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
@@ -363,7 +398,7 @@
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">PROJECT 02</span>
+                <span class="project-row__num">PROJECT 03</span>
                 <div class="project-row__tags">
                   <span class="tag">Deep Learning</span>
                   <span class="tag">Vision Transformers</span>
@@ -383,8 +418,8 @@
         </div>
       </article>
 
-      <!-- Project 3 -->
-      <article class="project-row" id="project-telemetry">
+      <!-- Project 4 -->
+      <article class="project-row project-row--alt" id="project-telemetry">
         <div class="container">
           <div class="project-row__inner">
             <div class="project-row__image-col">
@@ -394,7 +429,7 @@
             </div>
             <div class="project-row__content-col">
               <div class="project-row__meta">
-                <span class="project-row__num">PROJECT 03</span>
+                <span class="project-row__num">PROJECT 04</span>
                 <div class="project-row__tags">
                   <span class="tag">Tableau</span>
                   <span class="tag">IoT Analytics</span>
@@ -407,99 +442,6 @@
                 <ul class="project-row__bullets">
                   <li>Aggregated and parsed semi-structured JSON sensor feeds into high-level business intelligence.</li>
                   <li>Uncovered geographical anomalies in machine operational thresholds, drastically reducing machinery downtime through predictive maintenance prompts.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4 -->
-      <article class="project-row project-row--alt" id="project-sql">
-        <div class="container">
-          <div class="project-row__inner">
-            <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="MySQL Compiler preview">
-                <img src="images/mysql-compiler.jpg" alt="MySQL Web Compiler Platform" class="portfolio-img" />
-              </div>
-            </div>
-            <div class="project-row__content-col">
-              <div class="project-row__meta">
-                <span class="project-row__num">PROJECT 04</span>
-                <div class="project-row__tags">
-                  <span class="tag">SQL Engine</span>
-                  <span class="tag">Web Compiler</span>
-                  <span class="tag">Data Systems</span>
-                </div>
-              </div>
-              <h3 class="project-row__title">MySQL Web Compiler — Ingestion &amp; Query Environment</h3>
-              <div class="project-row__desc">
-                <p class="project-row__lead-text">Allows fast query onboarding and compilation supporting <strong>5+ file formats</strong> (CSV, XLSX, XLS, XML, SQL).</p>
-                <ul class="project-row__bullets">
-                  <li>Engineered a custom parsing script to execute complex multi-statement SQL files client-side.</li>
-                  <li>Built features for visual data exporting, automatic schema recognition, and quick interactive previews, boosting developer productivity.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 5 -->
-      <article class="project-row" id="project-voice">
-        <div class="container">
-          <div class="project-row__inner">
-            <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Voice Box preview">
-                <img src="images/voice-box.jpg" alt="Voice-Assisted Assistive Box" class="portfolio-img" />
-              </div>
-            </div>
-            <div class="project-row__content-col">
-              <div class="project-row__meta">
-                <span class="project-row__num">PROJECT 05</span>
-                <div class="project-row__tags">
-                  <span class="tag">IoT Device</span>
-                  <span class="tag">Voice UI</span>
-                  <span class="tag">Assistive Tech</span>
-                </div>
-              </div>
-              <h3 class="project-row__title">Voice-Assisted Box — Inclusive Assistive UI</h3>
-              <div class="project-row__desc">
-                <p class="project-row__lead-text">Dedicated voice synthesizer interface helping speech-impaired individuals express primary needs.</p>
-                <ul class="project-row__bullets">
-                  <li>Structured clean signal flows from hardware buttons directly to voice processing units.</li>
-                  <li>Optimized system battery usage and response times to ensure practical day-to-day usability.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 6 -->
-      <article class="project-row project-row--alt" id="project-layoffs">
-        <div class="container">
-          <div class="project-row__inner">
-            <div class="project-row__image-col">
-              <div class="img-placeholder" aria-label="Layoffs Dashboard preview">
-                <img src="images/layoff-dashboard.jpg" alt="Global Tech Layoffs Excel Dashboard" class="portfolio-img" />
-              </div>
-            </div>
-            <div class="project-row__content-col">
-              <div class="project-row__meta">
-                <span class="project-row__num">PROJECT 06</span>
-                <div class="project-row__tags">
-                  <span class="tag">Data Analytics</span>
-                  <span class="tag">Advanced Excel</span>
-                  <span class="tag">Visual Dashboard</span>
-                </div>
-              </div>
-              <h3 class="project-row__title">Global Tech Layoffs — Corporate Analytics Dashboard</h3>
-              <div class="project-row__desc">
-                <p class="project-row__lead-text">Synthesized data across <strong>1,893 corporate entities</strong> and <strong>3,86,379 employees</strong> in Excel.</p>
-                <ul class="project-row__bullets">
-                  <li>Developed clean metrics workflows utilizing Pivot tables, nested arrays, and data sanitation logic.</li>
-                  <li>Identified market and funding-stage trends, showcasing retail and consumer tech as sectors with severe volatility (40K+ layoffs each).</li>
                 </ul>
               </div>
             </div>

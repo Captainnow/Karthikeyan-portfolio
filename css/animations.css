@@ -154,43 +154,10 @@ body:not(.gsap-active) .section-title.animate-in {
 }
 
 /* Tilt & scale on project image */
-.project-row__image-col {
-  transition: transform var(--dur-slow) var(--ease-smooth),
-              box-shadow var(--dur-slow) var(--ease-smooth);
-}
-
-.project-row:hover .project-row__image-col {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7);
-}
-
-.project-row:hover .portfolio-img {
-  transform: scale(1.04);
-}
+/* Handled in style.css */
 
 /* ── Navigation Link Underline ── */
-.nav__link {
-  position: relative;
-}
-
-.nav__link::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 1.1rem;
-  right: 1.1rem;
-  height: 1px;
-  background: var(--clr-accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s var(--ease-smooth);
-}
-
-.nav__link:hover::after,
-.nav__link.active::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+/* Handled in style.css */
 
 /* ── Scroll Progress Bar ── */
 #scrollProgress {
@@ -203,24 +170,50 @@ body:not(.gsap-active) .section-title.animate-in {
   width: 0%;
 }
 
-/* ── Custom Pointer Circle Glow ── */
-#customCursorGlow {
+/* ── Custom Dual Pointer Follower ── */
+#customCursorDot {
+  width: 8px;
+  height: 8px;
+  background: var(--clr-accent);
+  border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(var(--clr-accent-rgb), 0.04) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
   transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: width 0.2s var(--ease-smooth), height 0.2s var(--ease-smooth), background 0.2s, opacity 0.3s var(--ease-smooth);
+  will-change: width, height, transform, opacity;
 }
 
-body:hover #customCursorGlow {
-  opacity: 1;
+#customCursorRing {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(223, 186, 115, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: width 0.3s var(--ease-smooth), height 0.3s var(--ease-smooth), border-color 0.3s, background 0.3s, opacity 0.3s var(--ease-smooth);
+  will-change: width, height, transform, opacity;
+}
+
+#customCursorDot.hover-active {
+  width: 4px;
+  height: 4px;
+  background: #ffffff;
+}
+
+#customCursorRing.hover-active {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(223, 186, 115, 0.85);
+  background: rgba(223, 186, 115, 0.05);
 }
 
 /* ── Prefers-reduced-motion Overrides ── */
@@ -251,7 +244,8 @@ body:hover #customCursorGlow {
     animation: none !important;
   }
 
-  #customCursorGlow {
+  #customCursorDot,
+  #customCursorRing {
     display: none !important;
   }
 }

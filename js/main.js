@@ -80,21 +80,52 @@ function initSmoothScroll() {
 /* ── 2. ADVANCED MOUSE EFFECTS ──────────────────────────────────
    Refined glowing spots and magnetic forces for premium desktops */
 function initMouseEffects() {
-  const customGlow = document.getElementById('customCursorGlow');
+  const cursorDot = document.getElementById('customCursorDot');
+  const cursorRing = document.getElementById('customCursorRing');
   const hoverCards = document.querySelectorAll('.hover-glow-card, .expertise__item');
   const magneticElements = document.querySelectorAll('.btn--primary, .nav__link--cta, .nav__logo');
 
   // Return immediately if it is a touch device
   if (window.matchMedia('(hover: none)').matches) return;
 
-  // Custom pointer glow follower
-  if (customGlow) {
+  // Custom pointer followers
+  if (cursorDot && cursorRing) {
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+
+    // Fade in on first movement
+    let hasMoved = false;
     window.addEventListener('mousemove', (e) => {
-      gsap.to(customGlow, {
+      if (!hasMoved) {
+        gsap.set([cursorDot, cursorRing], { opacity: 1 });
+        hasMoved = true;
+      }
+
+      // Inner dot (instant tracking)
+      gsap.set(cursorDot, {
+        x: e.clientX,
+        y: e.clientY
+      });
+
+      // Outer ring (lag tracking)
+      gsap.to(cursorRing, {
         x: e.clientX,
         y: e.clientY,
-        duration: 0.1,
+        duration: 0.15,
         ease: 'power2.out'
+      });
+    });
+
+    // Toggle hover active class on interactive items
+    const interactiveSelectors = 'a, button, .btn, .hover-glow-card, .expertise__item, .project-row, .company-card, .exp-item__content';
+    document.querySelectorAll(interactiveSelectors).forEach(elem => {
+      elem.addEventListener('mouseenter', () => {
+        cursorDot.classList.add('hover-active');
+        cursorRing.classList.add('hover-active');
+      });
+      elem.addEventListener('mouseleave', () => {
+        cursorDot.classList.remove('hover-active');
+        cursorRing.classList.remove('hover-active');
       });
     });
   }
@@ -121,7 +152,7 @@ function initMouseEffects() {
       const deltaX = e.clientX - elemCenterX;
       const deltaY = e.clientY - elemCenterY;
 
-      // Pull item 20% toward cursor
+      // Pull item 22% toward cursor
       gsap.to(elem, {
         x: deltaX * 0.22,
         y: deltaY * 0.22,
