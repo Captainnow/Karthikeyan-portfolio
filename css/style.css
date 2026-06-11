@@ -245,7 +245,7 @@ em {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform var(--dur-slow) var(--ease-smooth);
 }
 
@@ -1452,7 +1452,7 @@ em {
 .research__image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   filter: brightness(0.85) contrast(1.02);
   transition: transform var(--dur-slow) var(--ease-smooth), filter var(--dur-slow) var(--ease-smooth);
 }
