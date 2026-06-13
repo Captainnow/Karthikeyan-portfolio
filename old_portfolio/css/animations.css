@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   ANIMATIONS — VEAULY-STYLE SCROLL INTERACTIONS
-   Cinematic reveal, parallax, stagger, text-clip, zoom
+   ANIMATIONS - SCROLL INTERACTIONS & CINEMATIC EFFECTS
+   Reveal animations, parallax, stagger, text-clip, zoom
 ═══════════════════════════════════════════════════════════════ */
 
 /* ── Base scroll-reveal states ───────────────────────────────── */
@@ -33,7 +33,7 @@
   clip-path: inset(0 0 0 0);
 }
 
-/* Stagger delays — cascade effect */
+/* Stagger delays - cascade effect */
 .delay-1 { transition-delay: 0.12s; }
 .delay-2 { transition-delay: 0.24s; }
 .delay-3 { transition-delay: 0.36s; }
@@ -105,7 +105,7 @@
   transition: transform 0.1s linear;
 }
 
-/* ── Project row — image cinematic zoom on scroll ────────────── */
+/* ── Project row - image cinematic zoom on scroll ────────────── */
 .project-row__image-col {
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -153,7 +153,7 @@
   transform: scaleX(1);
 }
 
-/* ── Expertise items — sliding number + expanding line ───────── */
+/* ── Expertise items - sliding number + expanding line ───────── */
 .expertise__item {
   position: relative;
   overflow: hidden;
