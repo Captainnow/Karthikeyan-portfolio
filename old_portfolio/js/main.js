@@ -1,6 +1,6 @@
 /* ============================================================
    PORTFOLIO — MAIN JAVASCRIPT
-   Veauly-style cinematic scroll interactions
+   Cinematic scroll interactions & animations
    ============================================================ */
 
 'use strict';
@@ -71,7 +71,7 @@
 })();
 
 
-// ── Scroll Reveal (IntersectionObserver) — Veauly-style ───────
+// ── Scroll Reveal (IntersectionObserver) - Smooth animations ---
 (function initScrollReveal() {
   const selectors = [
     '.reveal-up', '.reveal-left', '.reveal-right',
@@ -83,7 +83,7 @@
 
   const targets = document.querySelectorAll(selectors);
 
-  // Skip hero children — they use CSS keyframe animation
+  // Skip hero children - they use CSS keyframe animation
   const nonHeroTargets = Array.from(targets).filter(el =>
     !el.closest('.hero__content') && !el.closest('.hero__scroll-indicator')
   );
